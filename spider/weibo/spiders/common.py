@@ -129,12 +129,20 @@ def of_upload(data_list):
             "endpoint": "default",
             "metric": "scope",
             "timestamp": i.get('data_time'),
-            "step": 5,
+            "step": 1,
             "value": i.get('scope'),
             "counterType": "GAUGE",
             "tags": "idc=lg,loc=beijing,ti="+i.get('name'),
         }
         payload.append(data_tmp_dict)
 
-    r = requests.post("http://127.0.0.1:1988/v1/push", data=json.dumps(payload))
+    data_up = json.dumps(payload)
+    with open("./log/log.log", 'ab') as f:
+        f.write(data_up)
+
+    scope_str = str(i.get('data_time')) + i.get('name') + '  --  ' + str(i.get('scope')) + '  --  ' + str(i.get('data_time')) + "\r\n"
+    with open("./log/scope.log", 'ab') as f:
+        f.write(scope_str)
+
+    r = requests.post("http://127.0.0.1:1988/v1/push", data=data_up)
     return r
