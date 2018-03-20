@@ -1,0 +1,8 @@
+hot:http://finance.sina.com.cn/realstock/company/hotstock_daily_a.js
+list:http://quote.eastmoney.com/stocklist.html
+item:http://hq.sinajs.cn/list=sz399001
+image:
+    http://image.sinajs.cn/newchart/min/n/sh000001.gif
+    http://image.sinajs.cn/newchart/daily/n/sh601006.gif
+    http://image.sinajs.cn/newchart/weekly/n/sh000001.gif
+    http://image.sinajs.cn/newchart/monthly/n/sh000001.gif

@@ -1,0 +1,4 @@
+*.pyc
+.idea
+log.txt
+*_error
