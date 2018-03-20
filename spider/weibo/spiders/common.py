@@ -136,13 +136,16 @@ def of_upload(data_list):
         }
         payload.append(data_tmp_dict)
 
+        scope_str = str(i.get('data_time')) + i.get('name') + '  --  ' + str(i.get('scope')) + '  --  ' + str(
+            i.get('data_time')) + "\r\n"
+        with open("./log/scope.log", 'ab') as f:
+            f.write(scope_str)
+
     data_up = json.dumps(payload)
     with open("./log/log.log", 'ab') as f:
         f.write(data_up)
 
-    scope_str = str(i.get('data_time')) + i.get('name') + '  --  ' + str(i.get('scope')) + '  --  ' + str(i.get('data_time')) + "\r\n"
-    with open("./log/scope.log", 'ab') as f:
-        f.write(scope_str)
+
 
     r = requests.post("http://127.0.0.1:1988/v1/push", data=data_up)
     return r
