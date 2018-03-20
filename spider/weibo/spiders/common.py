@@ -136,7 +136,7 @@ def of_upload(data_list):
         }
         payload.append(data_tmp_dict)
 
-        scope_str = str(i.get('data_time')) + i.get('name') + '  --  ' + str(i.get('scope')) + '  --  ' + str(
+        scope_str = str(i.get('data_time')) + i.get('name') + '  --  ' + str(i.get('scope')*10) + 'ms' + '  --  ' + str(
             i.get('data_time')) + "\r\n"
         with open("./log/scope.log", 'ab') as f:
             f.write(scope_str)
