@@ -50,9 +50,9 @@ class AttentionSpider(scrapy.spiders.Spider):
         # return
         res = []
         body_utf8 = body.decode('gb2312').encode('UTF-8')
-        print body_utf8
+        # print body_utf8
 
-        m1 = re.finditer(r'var hq_str_sh(.*)=\"(.*)\";', body_utf8)
+        m1 = re.finditer(r'var hq_str_sz(.*)=\"(.*)\";', body_utf8)
         # print m1
         if m1:
             for m in m1:
