@@ -19,7 +19,7 @@ class AttentionSpider(scrapy.spiders.Spider):
     name = "attention"
     # allowed_domains = ['weibo.com', 'weibo.cn', 'sina.com.cn']
     # start_urls=['http://m.weibo.cn']
-    surl='http://hq.sinajs.cn/list=sz000402,sz000971,sz002920,sz002090,sz002230'
+    surl='http://hq.sinajs.cn/list=sz000402,sz000971,sz002920,sz002090,sz002230,sh603918'
     #web_domain = 'http://photo.poco.cn'
 
     # spider_sep_per_time=3600
@@ -52,7 +52,7 @@ class AttentionSpider(scrapy.spiders.Spider):
         body_utf8 = body.decode('gb2312').encode('UTF-8')
         # print body_utf8
 
-        m1 = re.finditer(r'var hq_str_sz(.*)=\"(.*)\";', body_utf8)
+        m1 = re.finditer(r'var hq_str_[s][hz](.*)=\"(.*)\";', body_utf8)
         # print m1
         if m1:
             for m in m1:
