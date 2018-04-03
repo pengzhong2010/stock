@@ -19,7 +19,7 @@ class AttentionSpider(scrapy.spiders.Spider):
     name = "attention"
     # allowed_domains = ['weibo.com', 'weibo.cn', 'sina.com.cn']
     # start_urls=['http://m.weibo.cn']
-    surl='http://hq.sinajs.cn/list=sz000402,sz000971,sz002920,sz002090,sz002230,sh603918,sz002766,sz000858'
+    surl='http://hq.sinajs.cn/list=sz000402,sz000971,sz002920,sz002090,sz002230,sh603918,sz002766,sz000858,sz002304'
     #web_domain = 'http://photo.poco.cn'
 
     # spider_sep_per_time=3600
